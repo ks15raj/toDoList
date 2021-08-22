@@ -1,0 +1,21 @@
+<%-include('header')-%>
+    <div class="box" id="heading">
+  <h1><%= newa %>
+  </h1>  </div>
+  <div class="box">
+    <%  itemss.forEach(function(item){%>
+      <form action="/delete" method="post">
+    <div class="item">
+      <input type="checkbox" value="<%=item._id%>" name="checkbox" onchange="this.form.submit()">
+    <p><%=  item.name %></p> 
+   
+  </div>
+  <% })%>
+  <input type="hidden" name="listName" value='<%= newa %>'>
+</form>
+    <form action="/" method="POST" class="item">
+        <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+    <button type="submit" name="list" value=<%=newa%>>+</button>
+    </form>
+  </div>
+<%-include('footer')-%>
